@@ -11,7 +11,7 @@ namespace Albina.DataAcces.core.Models
     [Table("User")]
     class UserRto
     {
-        
+
         [Key]
         public int id { get; set; }
 
@@ -19,9 +19,12 @@ namespace Albina.DataAcces.core.Models
 
         public string Surname { get; set; }
 
-        public string PhoneNumberPrefex { get; set; }
+        [Required] public string PhoneNumberPrefex { get; set; }
 
-        public string PhoneNumber { get; set; }
+        [Required] public string PhoneNumber { get; set; }
+
+        [Required, MinLength(7)] public string Password { get; set; }
+        public string ImageName { get; set; }
 
     }
 }
