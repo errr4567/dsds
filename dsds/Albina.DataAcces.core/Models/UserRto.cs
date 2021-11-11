@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Albina.DataAcces.core.Models
 {
     [Table("User")]
-    class UserRto
+    public class UserRto
     {
 
         [Key]
