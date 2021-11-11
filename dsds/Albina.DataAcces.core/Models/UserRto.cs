@@ -11,6 +11,7 @@ namespace Albina.DataAcces.core.Models
     [Table("User")]
     public class UserRto
     {
+        #region данные ползв
 
         [Key]
         public int id { get; set; }
@@ -19,12 +20,20 @@ namespace Albina.DataAcces.core.Models
 
         public string Surname { get; set; }
 
+        public string ImageName { get; set; }
+        
+        
         [Required] public string PhoneNumberPrefex { get; set; }
 
         [Required] public string PhoneNumber { get; set; }
 
         [Required, MinLength(7)] public string Password { get; set; }
-        public string ImageName { get; set; }
+        #endregion
 
+        #region Внешние ключи
+        public List<VirtualExpenseRto> VirtualExpenses { get; set; }
+        public List<RejectExpenseRto> RejectExpenses { get; set; }
+        public List<AcceptExpenseRto> AcceptExpenses { get; set; }
+        #endregion
     }
 }

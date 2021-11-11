@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 
 namespace Albina.DataAcces.core.Models
 {
-    [Table("VirtualExpenseRto")]
+    [Table("VirtualExpense")]
    public class VirtualExpenseRto
     {
         [Key] public int Id { get; set; }
         public float Cost { get; set; }
+
+        public int AuthorId { get; set; }
+        public string WhereSpend { get; set; }
 
         public CostCurrencyRto CostCurrency { get; set; }
         public VirtualExpenseStatusRto Status { get; set; }
